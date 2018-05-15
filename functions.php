@@ -28,17 +28,20 @@ if ( ! function_exists( 'twentyseventeen_posted_on' ) ) :
  * Integrate Co-Authors Plus with TwentySeventeen by replacing twentyseventeen_posted_on() with this function
  */
 function twentyseventeen_posted_on() {
+  $postName = get_post_field( 'post_name', get_post() );
 	$pubDate = get_the_date();
 	$modDate = get_the_modified_date();
+  $gitDate = get_the_date('Y-m-d');
+  $gitLink = 'https://github.com/zcash/zcash-blog/blob/master/_posts/' . $gitDate . '-' . $postName . '.md';
 	if ($modDate > $pubDate) {
-		$postDates = '<span class="entry-date">'.$pubDate.' &bull; Updated: '.$modDate.'</span>';
+		$postDates = '<span class="entry-date"><span class="pub-date">'.$pubDate.'</span> &bull; <span class="update-date">Updated: '.$modDate.'</span></span>';
 	} else {
 		$postDates = '<span class="entry-date">'.$pubDate.'</span>';
 	}
     if ( function_exists( 'coauthors_posts_links' ) ) :
         printf( __( '%3$s <span class="meta-sep">|</span> %2$s', 'twentyseventeen' ),
             'meta-prep meta-prep-author',
-            sprintf( '<a href="%1$s" title="%2$s" rel="bookmark" class="posted-on">%3$s</a>',
+            sprintf( '<a href="'.$gitLink.'" title="%2$s" rel="bookmark" class="posted-on">%3$s</a>',
                 get_permalink(),
                 esc_attr( get_the_time() ),
                 $postDates
@@ -91,7 +94,7 @@ add_action( 'after_setup_theme', 'zcash_custom_header_setup' );
 remove_action( 'wp_head', 'feed_links', 2 );
 add_action('wp_head', 'addBackPostFeed');
 function addBackPostFeed() {
-    echo '<link rel="alternate" type="application/rss+xml" title="RSS 2.0 Feed" href="'.get_bloginfo('rss2_url').'" />'; 
+    echo '<link rel="alternate" type="application/rss+xml" title="RSS 2.0 Feed" href="'.get_bloginfo('rss2_url').'" />';
 }
 
 /**
@@ -100,14 +103,14 @@ function addBackPostFeed() {
  */
 function efx_auto_subscribe_usergroup( $new_status, $old_status, $post ) {
     global $edit_flow;
- 
+
     if ( ( 'pending' == $new_status ) || ( 'published' == $new_status ) ) {
         $usergroup_ids_to_follow = array(
                168
             );
         $edit_flow->notifications->follow_post_usergroups( $post->ID, $usergroup_ids_to_follow, true );
     }
- 
+
     // Return true to send the email notification
     return $new_status;
 }
