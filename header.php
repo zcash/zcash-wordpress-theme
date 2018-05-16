@@ -2,6 +2,7 @@
 $langs = ["ru","fr","zh","pt","ko_KR","ja","es"];
 $pathArray = explode('/', $_SERVER[REQUEST_URI]);
 // Redirect non-english posts for translation
+/*
 if (is_single()){
 	$pubDate = get_the_date(U);
 	if ( (in_array($pathArray[1], $langs)) && ($pubDate <= 1489363200 ) ) { // Published on or before 2017-03-13
@@ -20,6 +21,7 @@ if (is_single()){
 		Redirect($origURL);
 	}
 }
+*/
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
@@ -76,7 +78,7 @@ if (is_single()){
                 <li><a href="<?php echo '/es' . $pageslug ?>">Español</a></li>
             </ul>
         </div>
-		
+
 	</header><!-- #masthead -->
 	<div class="site-content-contain">
 		<div id="content" class="site-content">
