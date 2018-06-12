@@ -18,7 +18,7 @@
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="wrap">
-				
+
 		<div class="footer-menu">
 			<div class="menu-items grid-flex-container">
 				<div class="grid-flex-cell">
@@ -39,7 +39,7 @@ About						</li>
 						<li class="menu-title">
 Technology						</li>
 						<li><a href="https://z.cash/download.html">Download Zcash</a></li>
-						<li><a href="https://zcash.readthedocs.io/en/latest/rtd_pages/rtd_docs/payment_api.html">1.0 User Guide</a></li>
+						<li><a href="https://zcash.readthedocs.io/en/latest/rtd_pages/rtd_docs/user_guide.html">1.0 User Guide</a></li>
 						<li><a href="https://github.com/zcash/zcash">GitHub</a></li>
 						<li><a href="https://github.com/zcash/zcash/issues">Report a bug</a></li>
 						<li><a href="https://z.cash/technology/paramgen.html">Paramgen</a></li>
@@ -133,8 +133,8 @@ Community						</li>
 				</div>
 			</div>
 			<p><span class="copy">© 2017 Zerocoin Electric Coin Company</span></p>
-		</div>				
-				
+		</div>
+
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->
 	</div><!-- .site-content-contain -->
