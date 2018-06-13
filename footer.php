@@ -39,7 +39,7 @@ About						</li>
 						<li class="menu-title">
 Technology						</li>
 						<li><a href="https://z.cash/download.html">Download Zcash</a></li>
-						<li><a href="https://zcash.readthedocs.io/en/latest/rtd_pages/rtd_docs/user_guide.html">1.0 User Guide</a></li>
+						<li><a href="https://zcash.readthedocs.io/en/latest/rtd_pages/rtd_docs/user_guide.html">User Guide</a></li>
 						<li><a href="https://github.com/zcash/zcash">GitHub</a></li>
 						<li><a href="https://github.com/zcash/zcash/issues">Report a bug</a></li>
 						<li><a href="https://z.cash/technology/paramgen.html">Paramgen</a></li>
