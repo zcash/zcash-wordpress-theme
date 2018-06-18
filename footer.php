@@ -18,7 +18,7 @@
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="wrap">
-				
+
 		<div class="footer-menu">
 			<div class="menu-items grid-flex-container">
 				<div class="grid-flex-cell">
@@ -29,7 +29,7 @@ About						</li>
 						<!-- <li>Careers</li> -->
 						<li><a href="/">Blog</a></li>
 						<li><a href="https://z.cash/buzz.html">Buzz</a></li>
-						<li><a href="https://z.cash/jobs.html">Jobs</a></li>
+						<li><a href="https://z.cash/jobs/">Jobs</a></li>
 						<li><a href="https://z.cash/contact.html">Contact Us</a></li>
 					</ul>
 				</div>
@@ -133,8 +133,8 @@ Community						</li>
 				</div>
 			</div>
 			<p><span class="copy">© 2017 Zerocoin Electric Coin Company</span></p>
-		</div>				
-				
+		</div>
+
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->
 	</div><!-- .site-content-contain -->
