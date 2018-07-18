@@ -28,17 +28,20 @@ if ( ! function_exists( 'twentyseventeen_posted_on' ) ) :
  * Integrate Co-Authors Plus with TwentySeventeen by replacing twentyseventeen_posted_on() with this function
  */
 function twentyseventeen_posted_on() {
+  $postName = get_post_field( 'post_name', get_post() );
 	$pubDate = get_the_date();
 	$modDate = get_the_modified_date();
+  $gitDate = get_the_date('Y-m-d');
+  $gitLink = 'https://github.com/zcash/zcash-blog/blob/master/_posts/' . $gitDate . '-' . $postName . '.md';
 	if ($modDate > $pubDate) {
-		$postDates = '<span class="entry-date">'.$pubDate.' &bull; Updated: '.$modDate.'</span>';
+		$postDates = '<span class="entry-date"><span class="pub-date">'.$pubDate.'</span> &bull; <span class="update-date">Updated: '.$modDate.'</span></span>';
 	} else {
 		$postDates = '<span class="entry-date">'.$pubDate.'</span>';
 	}
     if ( function_exists( 'coauthors_posts_links' ) ) :
         printf( __( '%3$s <span class="meta-sep">|</span> %2$s', 'twentyseventeen' ),
             'meta-prep meta-prep-author',
-            sprintf( '<a href="%1$s" title="%2$s" rel="bookmark" class="posted-on">%3$s</a>',
+            sprintf( '<a href="'.$gitLink.'" title="%2$s" rel="bookmark" class="posted-on">%3$s</a>',
                 get_permalink(),
                 esc_attr( get_the_time() ),
                 $postDates
