@@ -91,7 +91,7 @@ add_action( 'after_setup_theme', 'zcash_custom_header_setup' );
 remove_action( 'wp_head', 'feed_links', 2 );
 add_action('wp_head', 'addBackPostFeed');
 function addBackPostFeed() {
-    echo '<link rel="alternate" type="application/rss+xml" title="RSS 2.0 Feed" href="'.get_bloginfo('rss2_url').'" />'; 
+    echo '<link rel="alternate" type="application/rss+xml" title="RSS 2.0 Feed" href="'.get_bloginfo('rss2_url').'" />';
 }
 
 /**
@@ -100,14 +100,14 @@ function addBackPostFeed() {
  */
 function efx_auto_subscribe_usergroup( $new_status, $old_status, $post ) {
     global $edit_flow;
- 
+
     if ( ( 'pending' == $new_status ) || ( 'published' == $new_status ) ) {
         $usergroup_ids_to_follow = array(
                168
             );
         $edit_flow->notifications->follow_post_usergroups( $post->ID, $usergroup_ids_to_follow, true );
     }
- 
+
     // Return true to send the email notification
     return $new_status;
 }
@@ -122,5 +122,8 @@ return $items;
 	}
     return $items;
 }
+
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 ?>
